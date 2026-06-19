@@ -73,5 +73,5 @@
     loop: "{{ instances }}"
     when:
       - action == "delete"
-      - item == "frotend"
+      - item == "frontend"
        
