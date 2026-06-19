@@ -52,11 +52,22 @@
     - item.item == "frontend"
     - action == "create"
 
+  - name: delete r53 record   
+    amazon.aws.route53:
+      state: absent
+      zone: "{{ domain_name }}"
+      record: "{{ item }}.{{ domain_name }}"  #mongodb.devops550.online
+      type: A
+      ttl: 1
+    loop: "{{ instances }}"
+    when: action == "delete"
+
+
   - name: delete r53 record for frontend
     amazon.aws.route53:
       state: absent
       zone: "{{ domain_name }}"
-      record: "{{ domain_name }}"
+      record: "{{ domain_name }}" #devops550.online
       type: A
       ttl: 1
     loop: "{{ instances }}"
