@@ -37,6 +37,7 @@
       value: "{{ item.instances[0].private_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}"
+    when: action == "create"
 
   - name: Create r53 records for frontend
     amazon.aws.route53:
@@ -45,7 +46,7 @@
       record: "{{ domain_name }}"  #devops550.online
       type: A
       ttl: 1
-      value: "{{ item.instances[0].private_ip_address }}"
+      value: "{{ item.instances[0].public_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}"
     when: 
