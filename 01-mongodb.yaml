@@ -1,0 +1,8 @@
+- name: configuring mongodb server
+  hosts: mogodb
+  become: yes
+  tasks:
+  - name: copy mogodb repo
+    copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
