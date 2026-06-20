@@ -6,8 +6,8 @@
     command: dnf module enable redis:7 -y
   - name: install redis 
     package:
-      - name: redis
-        state: present
+      name: redis
+      state: present
   - name: allow remote connections
     replace:
       path: /etc/redis/redis.conf
@@ -18,7 +18,7 @@
       path: /etc/redis/redis.conf
       regexp: 'protected-mode'
       line: 'protected-mode no'
-  - name: enable and restart redis
+  - name: enable and start redis
     service:
       name: redis
       state: started
