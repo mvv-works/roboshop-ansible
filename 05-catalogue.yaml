@@ -70,7 +70,7 @@
     systemd_service:
       name: catalogue
       deamon_reload: true
-  - name: enable and restart catalogue
+  - name: enable and start catalogue
     servive:
       name: catalogue
       state: restarted
