@@ -3,13 +3,13 @@
   become: yes
   tasks:
   - name: install python
-      package:
-        name: "{{ item }}"
-        state: present
-      loop:
-      - python3
-      - gcc
-      - python3-devel
+    package:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - python3
+    - gcc
+    - python3-devel
   - name: create roboshop system user
     user:
       name: roboshop
