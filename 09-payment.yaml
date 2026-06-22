@@ -42,7 +42,7 @@
     pip:
       requirements: requirements.txt
       executable: pip3.9
-    arg: 
+    args: 
       chdir: /app
   - name: copy payment service
     template:
