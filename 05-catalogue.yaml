@@ -71,7 +71,7 @@
       name: catalogue
       deamon_reload: true
   - name: enable and start catalogue
-    servive:
+    service:
       name: catalogue
       state: restarted
       enabled: yes
