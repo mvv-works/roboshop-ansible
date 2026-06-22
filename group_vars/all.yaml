@@ -7,3 +7,4 @@
  CART_HOST: cart.devops550.online
  MYSQL_HOST: mysql.devops550.online
  RABBITMQ_HOST: rabbitmq.devops550.online
+ SHIPPING_HOST: shipping.devops550.online
