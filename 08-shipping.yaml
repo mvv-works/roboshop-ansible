@@ -70,10 +70,10 @@
     - /app/db/master-data.sql
   - name: Daemon reload
     systemd_service:
-      name: catalogue
+      name: shipping
       daemon_reload: true
-  - name: enable and start catalogue
+  - name: enable and start shipping
     service:
-      name: catalogue
+      name: shipping
       state: restarted
       enabled: yes
