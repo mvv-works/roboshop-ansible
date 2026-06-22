@@ -8,3 +8,4 @@
  MYSQL_HOST: mysql.devops550.online
  RABBITMQ_HOST: rabbitmq.devops550.online
  SHIPPING_HOST: shipping.devops550.online
+ PAYMENT_HOAT: payment.devops550.online
