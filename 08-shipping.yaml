@@ -57,7 +57,7 @@
 
 
   - name: load mysql data
-    ansible.mysql.mysql_db:
+    community.mysql.mysql_db:
       state: import
       name: all
       login_user: root
@@ -68,3 +68,12 @@
     - /app/db/schema.sql
     - /app/db/app-user.sql
     - /app/db/master-data.sql
+  - name: Daemon reload
+    systemd_service:
+      name: catalogue
+      daemon_reload: true
+  - name: enable and start catalogue
+    service:
+      name: catalogue
+      state: restarted
+      enabled: yes
