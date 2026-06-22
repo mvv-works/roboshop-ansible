@@ -19,7 +19,7 @@
   - name: create html directory
     file:
       path: /usr/share/nginx/html/
-      state: present
+      state: directory
   - name: download frontend
     get_url:
       url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
